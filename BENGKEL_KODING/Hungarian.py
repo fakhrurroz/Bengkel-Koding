@@ -91,7 +91,7 @@ scaler = MinMaxScaler()
 X_normal = scaler.fit_transform(X)
 
 # -----------------------------------------------------
-with open('rf_model.pkl', 'rb') as file:
+with open('knn_fix.pkl', 'rb') as file:
         model = pickle.load(file)
 
 y_pred = model.predict(X_normal)
