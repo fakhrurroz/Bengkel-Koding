@@ -91,7 +91,8 @@ scaler = MinMaxScaler()
 X_normal = scaler.fit_transform(X)
 
 # -----------------------------------------------------
-model = pickle.load(open("BENGKEL_KODING/model/knn_best_model.pkl", 'rb'))
+with open('rf_model.pkl', 'rb') as file:
+        model = pickle.load(file)
 
 y_pred = model.predict(X_normal)
 accuracy = accuracy_score(y, y_pred)
