@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 import streamlit as st
 import pickle
 
-with open("data/hungarian.data", encoding='Latin1') as file:
+with open("BENGKEL_KODING/hungarian.data", encoding='Latin1') as file:
   lines = [line.strip() for line in file]
 
 data = itertools.takewhile(
