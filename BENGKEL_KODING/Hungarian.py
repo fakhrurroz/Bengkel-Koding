@@ -6,6 +6,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import MinMaxScaler
 import streamlit as st
 import pickle
+import time
 
 with open("BENGKEL_KODING/hungarian.data", encoding='Latin1') as file:
   lines = [line.strip() for line in file]
