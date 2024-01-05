@@ -101,41 +101,6 @@ df_final = pd.DataFrame(X, columns=df_clean.columns[:-1])
 
 df_final['target'] = y
 
-# # Langkah 2: Mengatur RandomizedSearchCV
-# param_grid = {
-#     "n_neighbors": range(3, 21),
-#     "metric": ["euclidean", "manhattan", "chebyshev"],
-#     "weights": ["uniform", "distance"],
-#     "algorithm": ["auto", "ball_tree", "kd_tree"],
-#     "leaf_size": range(10, 61),
-# }
-
-# knn_model = KNeighborsClassifier()
-# knn_rscv = RandomizedSearchCV(estimator=knn_model, param_distributions=param_grid, n_iter=100, scoring="accuracy", cv=5, random_state=42)
-
-# # Langkah 3: Menerapkan SMOTE
-# smote = SMOTE(random_state=42)
-# X_resampled, y_resampled = smote.fit_resample(X, y)
-
-# # Langkah 4: Latih Model dengan Parameter Terbaik
-# knn_rscv.fit(X_resampled, y_resampled)
-
-# # Mendapatkan model terbaik
-# best_knn_model = knn_rscv.best_estimator_
-
-# # Langkah 5: Evaluasi Akurasi
-# y_pred = best_knn_model.predict(X_resampled)
-# accuracy = accuracy_score(y_resampled, y_pred)
-# accuracy = round((accuracy * 100), 2)
-# print(f"Model Accuracy: {accuracy}%")
-
-# # Opsional: Simpan Model Terbaik
-# with open('model/knn_best_model.pkl', 'wb') as file:
-#     pickle.dump(best_knn_model, file)
-
-# # Menyimpan dataset final
-# df_final = X_resampled.copy()
-# df_final['target'] = y_resampled
 
 
 
